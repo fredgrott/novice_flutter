@@ -1,0 +1,6 @@
+{
+  "appTitle": "project_devops",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}
