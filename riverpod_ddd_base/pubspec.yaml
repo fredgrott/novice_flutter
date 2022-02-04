@@ -1,0 +1,78 @@
+name: riverpod_ddd_base
+description: A new Flutter project.
+
+# Prevent accidental publishing to pub.dev.
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.15.0-268.18.beta <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  google_fonts: ^2.1.0
+  # localization helper
+  intl: ^0.17.0
+  # localization automation
+  intl_utils: ^2.4.0
+  google_language_fonts: ^2.0.0
+  fpdart: ^0.0.14
+  equatable: ^2.0.3
+  catcher: ^0.6.9
+  logging: ^1.0.2
+  logging_appenders: ^1.0.0
+  freezed_annotation: ^1.1.0
+  riverpod: ^1.0.3
+    
+ 
+
+  
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  # code metrics
+  dart_code_metrics: ^4.5.0
+  build_runner: ^2.1.7
+  derry: ^1.4.3
+  mocktail: ^0.2.0
+  golden_toolkit: ^0.13.0
+  page_object: ^0.2.0
+  given_when_then: ^0.2.0
+  freezed: ^1.1.0
+
+  
+
+  lint: ^1.8.2
+
+
+
+
+  
+
+
+flutter:
+  uses-material-design: true
+
+  # Enable generation of localized Strings from arb files.
+  generate: true
+
+  assets:
+    # Add assets from the images directory to the application.
+    - assets/images/
+    - google_fonts/
+# flutter intl for localization settings
+flutter_intl:
+  enabled: true   
+  class_name: S   
+  main_locale: en 
+  arb_dir: lib/src/localization
+  output_dir: lib/src/localization_gen
+  use_deferred_loading: false
+scripts: derry.yaml
+
+
