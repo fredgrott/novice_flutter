@@ -32,6 +32,14 @@ But, first I need the code demos. Hence a repo with small code demos that become
 
 ## Medium Articles
 
+DevOPS:
+
+[DevOPS: Speed Up Code Generation Using Build Runner](https://fredgrott.medium.com/devops-speed-up-code-generation-using-build-runner-519ad62c55d2?sk=12f676cfe7168c3a722f5d15984a7b62)
+
+[How To Get Windows App Targets With Flutter SDK](https://fredgrott.medium.com/how-to-get-windows-app-targets-with-flutter-sdk-10a41837bb0e?sk=614e62e57afafcb86fb2de80cde09217)
+
+
+
 
 As you await articles, you can view past ones at my medium blog:
 
