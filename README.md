@@ -38,7 +38,7 @@ DevOPS:
 
 [How To Get Windows App Targets With Flutter SDK](https://fredgrott.medium.com/how-to-get-windows-app-targets-with-flutter-sdk-10a41837bb0e?sk=614e62e57afafcb86fb2de80cde09217)
 
-
+[ADHD Way To master Flutter Project DevOps](https://fredgrott.medium.com/adhd-way-to-master-flutter-project-devops-6a7e5a4c203d?sk=2f0c0035c1b5281b7acf75922f17948a)
 
 
 As you await articles, you can view past ones at my medium blog:
