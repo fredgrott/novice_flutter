@@ -1,45 +1,47 @@
 // Copyright 2022 Fredrick Allan Grott. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
+//
+// Borrowed from ResoCoder and their cod was under GNU License.
 
 import 'package:flutter/material.dart';
 import 'package:fpdart/fpdart.dart';
-import 'package:valueobjects_base/src/domain/errors/unexpected_value_error.dart';
+import 'package:valueobjects_base/src/domain/errors/un_expected_value_error.dart';
+import 'package:valueobjects_base/src/domain/failures/value_failure.codegen.dart';
+import 'package:valueobjects_base/src/domain/value_objects/i_validatable.dart';
 
-@immutable 
-abstract class IValueObject<Failure, T> {
-  
-  /// Creates a [ValueObject]
+@immutable
+abstract class IValueObject<T> implements IValidatable {
   const IValueObject();
+  Either<ValueFailure<T>, T> get value;
 
-  /// The value of this [ValueObject]
-  Either<Failure, T> get value;
-
-  /// If this is valid, returns the value.
-  /// Otherwise, throws [UnexpectedValueError].
-  ///
-  /// This should be used when you have already validated the value,
-  /// and so you expect it to be valid.
-  ///
-  /// Do not use this for validation (for example, by wrapping in a `try`/`catch`).
-  /// Instead, use the [value] field, or the [isValid] getter.
+  /// Throws [UnexpectedValueError] containing the [ValueFailure]
   T getOrCrash() {
-    return value.fold((f) => throw UnexpectedValueError(f), id,);
+    // id = identity - same as writing (right) => right
+    return value.fold((f) => throw UnExpectedValueError(f), id,);
   }
 
-  /// If this is valid, returns the value. Otherwise, returns [dflt].
-  T getOrElse(T  dflt) {
-    return value.getOrElse((l) => dflt );
+  T getOrElse(T dflt) {
+    return value.getOrElse((l) => dflt);
   }
 
-  /// True if this is valid.
-  bool get isValid => value.isRight();
+  Either<ValueFailure<dynamic>, Unit> get failureOrUnit {
+    return value.fold(
+      (l) => left(l),
+      (r) => right(unit),
+    );
+  }
+
+  @override
+  bool isValid() {
+    return value.isRight();
+  }
 
   @override
   bool operator ==(Object o) {
     if (identical(this, o,)) return true;
 
-    return o is IValueObject<Failure, T> && o.value == value;
+    return o is IValueObject<T> && o.value == value;
   }
 
   @override
@@ -47,4 +49,5 @@ abstract class IValueObject<Failure, T> {
 
   @override
   String toString() => 'Value($value)';
+
 }
