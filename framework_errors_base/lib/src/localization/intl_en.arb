@@ -1,0 +1,6 @@
+{
+  "appTitle": "framework_errors_base",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}

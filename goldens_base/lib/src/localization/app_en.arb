@@ -1,0 +1,6 @@
+{
+  "appTitle": "goldens_base",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}
