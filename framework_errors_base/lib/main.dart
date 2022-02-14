@@ -3,10 +3,11 @@ import 'package:catcher/catcher.dart';
 import 'package:flutter/foundation.dart';
 
 import 'package:flutter/services.dart';
-import 'package:framework_errors_base/src/app.dart';
+
 import 'package:framework_errors_base/src/infrastructure/app_vars.dart';
 import 'package:framework_errors_base/src/infrastructure/catching/catcher_options.dart';
 import 'package:framework_errors_base/src/infrastructure/logging/init_logger.dart';
+import 'package:framework_errors_base/src/my_app.dart';
 import 'package:framework_errors_base/src/settings/settings_controller.dart';
 import 'package:framework_errors_base/src/settings/settings_service.dart';
 
